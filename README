@@ -1,0 +1,94 @@
+=head1 NAME
+
+Business::ISP
+
+
+
+=head1 DESCRIPTION
+
+This system is a client account and billing manager geared
+to an ISP-type business. It allows note/problem tracking,
+client personal and account information management, plugs
+into direct banking systems for live-time account renewals,
+ties directly into your RADIUS database for usage information,
+etc.
+
+It has its own built in sanity and error checker, and web
+GUI that includes operator login, session time-outs etc.
+
+There are schema files for a MySQL database in the src/schema
+directory, and when running its tests, uses a temporary copy
+of an SQLite database, also with a schema in the same directory.
+
+Although functional, it is still in heavy development. I
+haven't coded anything within this system for a year or so,
+and am currently making sweeping changes, most of all the
+cleanup of redundant and repetitive code, and smoothing out
+the dependency trees.
+
+Things WILL change, and things ARE broken :)
+
+
+
+=head1 INSTALLATION
+
+To install this module, run the following commands:
+
+    (The install is problematic at best)
+
+    perl Makefile.PL configure
+    make
+    make test
+    
+    Notes:
+          The 'configure' argument to the 'perl Makefile.PL' line is
+          necessary. Supplying no argument will use defaults, which
+          you most likely do not want. This allows CPAN to bypass the
+          user-input portion of the setup.
+ 
+          if you run into errors while running 'make test', find out
+          which file is causing grief (eg. t/21-audit.t), and run 
+          'perl t/21-audit.t'.
+        
+          Many of the test files have diagnostic printouts on what is
+          wrong, and potential solutions on how to fix.
+
+    make install
+
+
+
+
+=head1 SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Business::ISP::[component]
+
+Or, you can find a list of all module perldocs online on your webserver
+under the /ispmanual directory.
+
+You can also look for information at:
+
+    Search CPAN
+        http://search.cpan.org/dist/Business::ISP
+
+
+
+=head1 AUTHOR
+
+Steve Bertrand, C<< <steveb at cpan.org> >>
+
+
+
+=head1 COPYRIGHT
+
+Copyright (C) 2012 Steve Bertrand
+
+
+
+=head1 LICENSE
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
